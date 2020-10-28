@@ -51,6 +51,11 @@ npm run client
 ...
 ```
 
+Alternatively, you can run the client in debug mode to show more outputs:
+```
+npm run client:debug
+```
+
 ## Implementation details
 
 Here are some notes on my submission :
@@ -67,3 +72,4 @@ Here are some notes on my submission :
 - in case multiple orders are inserted simultaneously with the same price, they may not be inserted at the same order on each copy of the book, we need to add a second dimension sorting on the order ids which is unique to ensure consistent sorting on all nodes
 - order insertion in the order book is using a linear sorting while a binary sorting will be more efficient
 - the source code need to be split in more files to make it more readable and maintainable
+- when aborting a client, it's IP stay in cache in the DHT, and this generates network errors for other clients, I did not find a way to correctly and completely disconnect a client from th DHT, thus when restarting, it needs a restart of the grapes too to flush cache

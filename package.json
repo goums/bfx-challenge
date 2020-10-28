@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "client": "DEBUG=bfx:* node src/client.js",
+    "client": "DEBUG=bfx:client node src/client.js",
+    "client:debug": "DEBUG=bfx:* node src/client.js",
     "prettier": "prettier --config ./.prettierrc.json --loglevel warn --write '**/*.js'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
